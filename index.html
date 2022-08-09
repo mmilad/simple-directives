@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Simple Directive Examples</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='./main.js'></script>
+    <script src='./example-directives.js'></script>
+
+
+    <style>
+        .placholder {
+            height: 800px;
+        }
+        .in-view-class {
+            height: 100px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .in-view-class.visible {
+            opacity: 1;
+        }
+
+        .bg-purple {
+            background-color: purple;
+        }
+        .bg-green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="foo" log-me>
+        <div class="bar">hello world</div>
+    </div>
+
+    <div class="placholder"></div>
+
+    <div class="in-view-class bg-purple" in-view>in view directive - without threshold</div>
+
+    <div class="placholder"></div>
+
+    <div class="in-view-class bg-green" in-view in-view-threshold="0.5">in view directive - with threshold</div>
+
+    <div class="placholder"></div>
+</body>
+</html>
